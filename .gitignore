@@ -1,0 +1,5 @@
+yocto/build_*
+yocto/\.repo/
+yocto/meta-openembedded
+yocto/meta-sunxi
+yocto/poky

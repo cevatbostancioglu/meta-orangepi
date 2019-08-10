@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="poky"
+            fetch="git://git.yoctoproject.org/"
+            revision="thud" />
+
+  <remote name="open-embedded"
+            fetch="git://git.openembedded.org/"
+            revision="thud" />
+    
+	<remote name="sunxi"
+            fetch="git://github.com/linux-sunxi"
+            revision="thud" />
+    
+    <project path="poky" name="poky" remote="poky" />
+
+    <project path="meta-openembedded" name="meta-openembedded" remote="open-embedded" />
+
+    <project path="meta-sunxi" name="meta-sunxi" remote="sunxi" />
+    
+  <default  sync-j="8" />
+
+</manifest>
