@@ -10,10 +10,10 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   ${BSPDIR}/poky/meta \
   ${BSPDIR}/poky/meta-poky \
-  ${BSPDIR}/meta-sunxi \
   ${BSPDIR}/meta-openembedded/meta-filesystems \
   ${BSPDIR}/meta-openembedded/meta-oe \
   ${BSPDIR}/meta-openembedded/meta-python \
   ${BSPDIR}/meta-openembedded/meta-networking \
   ${BSPDIR}/meta-orangepi \
+  ${BSPDIR}/meta-jailhouse \
   "

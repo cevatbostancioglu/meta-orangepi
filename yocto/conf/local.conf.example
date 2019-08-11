@@ -21,6 +21,7 @@ IMAGE_INSTALL += " \
    openssh openssh-keygen \
    kernel-modules \
    mtd-utils \
+   p7zip \
 "
 
 EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
@@ -29,3 +30,6 @@ IMAGE_FEATURES += "package-management"
 
 INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "useradd -P root root;"
+
+INHERIT += "buildhistory"
+BUILDHISTORY_COMMIT = "1"
