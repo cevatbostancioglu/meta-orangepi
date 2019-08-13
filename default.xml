@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="poky"
+            fetch="git://git.yoctoproject.org/"
+            revision="master" />
+
+  <remote name="open-embedded"
+            fetch="git://git.openembedded.org/"
+            revision="master" />
+    
+	<remote name="sunxi"
+            fetch="git://github.com/linux-sunxi"
+            revision="master" />
+
+  <remote name="jailhouse"
+            fetch="https://bitbucket.org/retotech/meta-jailhouse.git"
+            revision="master" />
+
+    <project path="poky" name="poky" remote="poky" />
+
+    <project path="meta-openembedded" name="meta-openembedded" remote="open-embedded" />
+
+    <project path="meta-sunxi" name="meta-sunxi" remote="sunxi" />
+
+    <project path="meta-jailhouse" name="meta-jaihouse" remote="jailhouse" />
+    
+  <default  sync-j="8" />
+
+</manifest>
