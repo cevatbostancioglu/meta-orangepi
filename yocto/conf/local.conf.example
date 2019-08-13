@@ -22,7 +22,19 @@ IMAGE_INSTALL += " \
    kernel-modules \
    mtd-utils \
    p7zip \
+   bash-completion less vim nano man \
+   ifupdown isc-dhcp-client net-tools iputils-ping ssh \
+   iw wireless-tools wpasupplicant \
+   pciutils usbutils ethtool iperf3 \
 "
+
+IMAGE_INSTALL_append= " \
+                      jailhouse \
+                      kernel-module-jailhouse \
+                      "
+
+IMAGE_FEATURES += "ssh-server-openssh"
+
 
 EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 

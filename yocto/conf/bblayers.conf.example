@@ -15,5 +15,4 @@ BBLAYERS ?= " \
   ${BSPDIR}/meta-openembedded/meta-python \
   ${BSPDIR}/meta-openembedded/meta-networking \
   ${BSPDIR}/meta-orangepi \
-  ${BSPDIR}/meta-jailhouse \
   "
