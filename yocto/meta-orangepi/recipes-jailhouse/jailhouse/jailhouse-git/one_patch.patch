@@ -1,0 +1,35 @@
+diff --git a/Kbuild b/Kbuild
+index 0b25e26..51ba7e1 100644
+--- a/Kbuild
++++ b/Kbuild
+@@ -51,7 +51,7 @@ GEN_PCI_DEFS_PY := $(obj)/pyjailhouse/pci_defs.py
+ $(GEN_PCI_DEFS_PY): $(src)/scripts/gen_pci_defs.sh
+ 	$(call if_changed,gen_pci_defs)
+ 
+-subdir-y := hypervisor configs inmates tools
++subdir-y := hypervisor configs inmates
+ 
+ subdir-ccflags-y := -Werror
+ 
+diff --git a/tools/Makefile b/tools/Makefile
+index 08fd361..0099b9c 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -23,7 +23,7 @@ KBUILD_CFLAGS := -g -O3 -DLIBEXECDIR=\"$(libexecdir)\" \
+ 	-D__LINUX_COMPILER_TYPES_H \
+ 	-DJAILHOUSE_VERSION=\"$(shell cat $(src)/../VERSION)\" $(EXTRA_CFLAGS)
+ # prior to 4.19
+-LDFLAGS :=
++#LDFLAGS :=
+ # since 4.19
+ KBUILD_LDFLAGS :=
+ 
+@@ -121,7 +121,7 @@ targets += $(MAN8_PAGES)
+ always +=  $(MAN8_PAGES)
+ 
+ $(obj)/%.8: $(src)/%.8.in
+-	$(call if_changed,gen_man)
++	sed 's/$${VERSION}/$(shell cat $(src)/../VERSION)/g' $< > $@
+ 
+ install-bin: $(BINARIES) $(DESTDIR)$(sbindir)
+ 	$(INSTALL_PROGRAM) $^

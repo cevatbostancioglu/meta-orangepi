@@ -1,26 +1,13 @@
-diff --git a/Kbuild b/Kbuild
-index 7cbde52..75d7ce3 100644
---- a/Kbuild
-+++ b/Kbuild
-@@ -51,7 +51,7 @@ GEN_PCI_DEFS_PY := $(obj)/pyjailhouse/pci_defs.py
- $(GEN_PCI_DEFS_PY): $(src)/scripts/gen_pci_defs.sh
- 	$(call if_changed,gen_pci_defs)
- 
--subdir-y := driver hypervisor configs inmates tools
-+subdir-y := driver hypervisor configs inmates 
- 
- subdir-ccflags-y := -Werror
- 
-diff --git a/tools/Makefile b/tools/Makefile
-index 08fd361..31a55c0 100644
---- a/tools/Makefile
-+++ b/tools/Makefile
-@@ -23,7 +23,7 @@ KBUILD_CFLAGS := -g -O3 -DLIBEXECDIR=\"$(libexecdir)\" \
+Index: git/tools/Makefile
+===================================================================
+--- git.orig/tools/Makefile
++++ git/tools/Makefile
+@@ -23,7 +23,7 @@ KBUILD_CFLAGS := -g -O3 -DLIBEXECDIR=\"$
  	-D__LINUX_COMPILER_TYPES_H \
  	-DJAILHOUSE_VERSION=\"$(shell cat $(src)/../VERSION)\" $(EXTRA_CFLAGS)
  # prior to 4.19
 -LDFLAGS :=
-+
++#LDFLAGS :=
  # since 4.19
  KBUILD_LDFLAGS :=
  

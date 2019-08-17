@@ -1,0 +1,13 @@
+Index: git/Kbuild
+===================================================================
+--- git.orig/Kbuild
++++ git/Kbuild
+@@ -41,7 +41,7 @@ GEN_VERSION_H := $(obj)/hypervisor/inclu
+ $(GEN_VERSION_H): $(src)/Makefile FORCE
+ 	$(call filechk,version)
+ 
+-subdir-y := driver hypervisor configs inmates tools
++subdir-y := driver hypervisor configs inmates
+ 
+ subdir-ccflags-y := -Werror
+ 

@@ -63,6 +63,8 @@ do_prep_host ()
 
     cp ${YOCTO_DIR}/conf/local.conf.example ${BUILD_DIR}/conf/local.conf
 
+    MACHINE="${MACHINE_NAME}"
+
     echo "do_prep_host done"
 }
 
@@ -73,6 +75,15 @@ do_build ()
     bitbake ${IMAGE_NAME}
 
     echo "do_build done"
+}
+
+do_build_sdk ()
+{
+    echo "do_build_sdk start"
+
+    bitbake ${IMAGE_NAME} -c populate_sdk
+
+    echo "do_build_sdk done"
 }
 
 do_custom_build ()
@@ -149,6 +160,12 @@ while true ; do
         build)
             do_prep_host
             do_build
+            shift
+            break
+            ;;
+        build-sdk)
+            do_prep_host
+            do_build_sdk
             shift
             break
             ;;
