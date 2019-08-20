@@ -7,18 +7,18 @@ PACKAGE_CLASSES ?= "package_rpm"
 
 USER_CLASS ?= "buildstats image-mklibs image-prelink"
 
-MACHINE ?= "orange-pi-zero"
-
-GCCVERSION ?= "8.3.%"
-#SDKGCCVERSION ?= "5.4.%"
-#BINUVERSION ?= "2.32.0"
-#GLIBCVERSION ?= "2.30"
-#LINUXLIBCVERSION ?= "%"
+MACHINE ?= "orange-pi-pc2"
 
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_initscripts = ""
+
+GCCVERSION ?= "8.3.0"
+SDKGCCVERSION ?= "8.3.0"
+BINUVERSION ?= "2.32.0"
+#GLIBCVERSION ?= "2.30"
+#LINUXLIBCVERSION ?= "%"
 
 IMAGE_INSTALL_append = " kernel-image kernel-devicetree"
 
@@ -34,14 +34,7 @@ IMAGE_INSTALL += " \
    pciutils usbutils ethtool iperf3 \
 "
 
-IMAGE_INSTALL_append= " \
-                      jailhouse \
-                      jailhouse-bash-completion \
-                      kernel-module-jailhouse \
-                      "
-
 IMAGE_FEATURES += "ssh-server-openssh"
-
 
 EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 
